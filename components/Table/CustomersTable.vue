@@ -314,27 +314,17 @@ export default {
     columns: 1;
   }
 
-  .imgs-mobile {
-    float: right;
-    width: 150px;
-    height: 150px;
-    border-radius: 10px;
-    padding: 10px;
-    padding-top: 25px;
-  }
-
-  .box-mobile {
-    position: static;
-    width: 368px;
-    height: 344px;
-    left: 0px;
-    top: 370px;
-    background: #ffffff;
+  .box {
+    width: 100%;
+    height: 450px;
+    margin-bottom: 60px;
+    background: white;
+    overflow: hidden;
+    break-inside: avoid;
     border-radius: 8px;
     flex: none;
-    order: 1;
+    order: 0;
     flex-grow: 0;
-    margin: 26px 0px;
   }
 
   .imgs {
