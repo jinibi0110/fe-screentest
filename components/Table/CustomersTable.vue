@@ -316,7 +316,7 @@ export default {
 
   .box {
     width: 100%;
-    height: 450px;
+    height: 430px;
     margin-bottom: 60px;
     background: white;
     overflow: hidden;
