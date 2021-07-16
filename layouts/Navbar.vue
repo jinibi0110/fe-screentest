@@ -15,7 +15,7 @@
 <style>
 .navbar {
   background-color: #fff;
-  width: 1920px;
+  width: 100%;
   height: 50px;
   position: fixed;
   left: 0px;
