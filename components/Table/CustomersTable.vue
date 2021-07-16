@@ -1,7 +1,7 @@
 <template>
   <b-container fluid>
     <div class="content">
-      <b-row >
+      <b-row>
         <!-- SEARCH BAR -->
         <b-col cols="12" sm="12" lg="3" md="4">
           <b-form-group>
@@ -36,7 +36,11 @@
               Filter by Name (A-Z)
             </option>
 
-            <option id="filter_ascending" class="text" value="ascending" v-on:click="sortArray()"
+            <option
+              id="filter_ascending"
+              class="text"
+              value="ascending"
+              v-on:click="sortArray()"
               >Name (A-Z)</option
             >
 
@@ -72,7 +76,9 @@
 
               <div class="padder">
                 <span class="text email"
-                  ><font-awesome-icon class="icon" icon="envelope" />{{ data.email }}</span
+                  ><font-awesome-icon class="icon" icon="envelope" />{{
+                    data.email
+                  }}</span
                 >
                 <br />
                 <font-awesome-icon class="icon" icon="map-marker-alt" />
@@ -96,11 +102,20 @@
                   <font-awesome-icon class="icon" icon="phone-alt" />
                   {{ data.phone }}</span
                 ><br />
-                <span class="text website"><font-awesome-icon class="icon" icon="globe" />{{ data.website }}</span
+                <span class="text website"
+                  ><font-awesome-icon class="icon" icon="globe" />{{
+                    data.website
+                  }}</span
                 ><br />
-                <span class="text compname"><font-awesome-icon class="icon" icon="briefcase" />{{ data.company.name }}</span
+                <span class="text compname"
+                  ><font-awesome-icon class="icon" icon="briefcase" />{{
+                    data.company.name
+                  }}</span
                 ><br />
-                <span class="text bs"><font-awesome-icon class="icon" icon="industry" />{{ data.company.bs }}</span
+                <span class="text bs"
+                  ><font-awesome-icon class="icon" icon="industry" />{{
+                    data.company.bs
+                  }}</span
                 ><br />
               </div>
             </div>
@@ -174,7 +189,7 @@ export default {
     return {
       search: "",
       filter_name: null,
-      ascending: true,
+      ascending: true
     };
   },
 
@@ -197,7 +212,7 @@ export default {
       }
 
       if (this.search) {
-        let result = this.customerList.filter(user => 
+        let result = this.customerList.filter(user =>
           user.name.toLowerCase().match(this.search.toLowerCase())
         );
         return result;
@@ -213,27 +228,23 @@ export default {
   },
 
   methods: {
-   sortArray() {
-      return this.filterCustomerList.sort((a, b) => a.name - b.name)
+    sortArray() {
+      return this.filterCustomerList.sort((a, b) => a.name - b.name);
     },
-
 
     filterByName(a, b) {
       var first = a.name.toLowerCase();
       var second = b.name.toLowerCase();
-      
-      
-        if (first > second) return 1;
-        if (second > first) return -1;
 
-        return 0;
+      if (first > second) return 1;
+      if (second > first) return -1;
 
+      return 0;
 
-        if (first > second) return -1;
-        if (second > first) return 1;
+      if (first > second) return -1;
+      if (second > first) return 1;
 
-        return 0;
-      
+      return 0;
     }
   },
 
@@ -251,7 +262,7 @@ export default {
   -webkit-column-count: 4;
   -webkit-column-gap: 40px;
   left: 169px;
-  top: 319px; 
+  top: 319px;
   height: 100%;
 }
 
@@ -287,6 +298,17 @@ export default {
     columns: 2;
   }
 }
+
+@media (min-width: 501px) {
+  .imgs {
+    object-fit: cover;
+    background: rgba(0, 0, 0, 0.27);
+    border-radius: 8px 8px 0px 0px;
+    width: 100%;
+    height: 220px;
+  }
+}
+
 @media (max-width: 500px) {
   .mason_container {
     columns: 1;
@@ -307,12 +329,25 @@ export default {
     height: 344px;
     left: 0px;
     top: 370px;
-    background: #FFFFFF;
+    background: #ffffff;
     border-radius: 8px;
     flex: none;
     order: 1;
     flex-grow: 0;
     margin: 26px 0px;
+  }
+
+  .imgs {
+    object-fit: cover;
+    position: relative;
+    margin: auto;
+    float: right;
+    margin-right: 20px;
+    top: 20px;
+    background: rgba(0, 0, 0, 0.27);
+    border-radius: 8px;
+    width: 90px;
+    height: 90px;
   }
 }
 
@@ -454,16 +489,6 @@ export default {
   text-align: left;
   width: 100%;
   font-size: 14.5px;
-}
-
-.imgs {
-  object-fit: cover;
-  left: 1px;
-  top: 0px; 
-  background: rgba(0, 0, 0, 0.27);
-  border-radius: 8px 8px 0px 0px;
-  width: 100%;
-  height: 220px
 }
 
 .padder {
